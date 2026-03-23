@@ -13,10 +13,12 @@
             --bg-card: #161616;
             --text-main: #ffffff;
             --text-muted: #a0a0a0;
-            --accent: #00d4ff; /* Narıncıdan Açıq Maviyə keçid */
+            --accent: #00d4ff; 
             --border: rgba(255, 255, 255, 0.08);
             --glass: rgba(255, 255, 255, 0.02);
             --disabled: #1a1a1a;
+            --x-color: #ffffff;
+            --opensea-color: #2081e2;
         }
 
         * {
@@ -76,19 +78,44 @@
 
         .logo span { color: var(--accent); }
 
-        nav a {
-            margin-left: 30px;
-            text-decoration: none;
-            color: var(--text-main);
-            font-weight: 400;
-            font-size: 0.8rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            transition: 0.3s;
-            opacity: 0.7;
+        .social-nav {
+            display: flex;
+            gap: 15px;
         }
 
-        nav a:hover { opacity: 1; color: var(--accent); }
+        .nav-btn {
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            padding: 8px 16px;
+            border-radius: 2px;
+            transition: 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .btn-x {
+            border: 1px solid var(--text-main);
+            color: var(--text-main);
+        }
+
+        .btn-x:hover {
+            background: var(--text-main);
+            color: var(--bg-dark);
+        }
+
+        .btn-opensea {
+            border: 1px solid var(--opensea-color);
+            color: var(--opensea-color);
+        }
+
+        .btn-opensea:hover {
+            background: var(--opensea-color);
+            color: white;
+        }
 
         .hero {
             height: 100vh;
@@ -434,9 +461,10 @@
 
         @media (max-width: 968px) {
             .drop-grid { grid-template-columns: 1fr; gap: 40px; }
-            nav { display: none; }
             h1 { font-size: 3.5rem; }
             header { padding: 15px 5%; }
+            .social-nav { gap: 8px; }
+            .nav-btn { padding: 6px 10px; font-size: 0.6rem; }
         }
     </style>
 </head>
@@ -446,12 +474,16 @@
 
 <header>
     <a href="#" class="logo">VIBE<span>TRIBES</span>CLUB</a>
-    <nav>
-        <a href="#collection">Drops</a>
-        <a href="#schedule">Takvim</a>
-        <a href="#roadmap">Vizyon</a>
-        <a href="#faq">S.S.S</a>
-    </nav>
+    <div class="social-nav">
+        <a href="https://x.com/vibetribesclub?s=21" target="_blank" class="nav-btn btn-x">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+            TWITTER
+        </a>
+        <a href="https://opensea.io/VibeStation/created" target="_blank" class="nav-btn btn-opensea">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M2.155 12.871l3.52 6.54c.101.189.262.336.455.417l.004.002 6.136 2.651c.203.088.431.088.634 0l6.136-2.651.004-.002a1.056 1.056 0 0 0 .455-.417l3.52-6.54a1.01 1.01 0 0 0-.012-1.026l-1.637-2.61a1.06 1.06 0 0 0-.441-.399l-6.864-3.14a1.047 1.047 0 0 0-.856 0l-6.864 3.14a1.06 1.06 0 0 0-.441.399l-1.637 2.61a1.01 1.01 0 0 0-.012 1.026z"/></svg>
+            OPENSEA
+        </a>
+    </div>
 </header>
 
 <main>
